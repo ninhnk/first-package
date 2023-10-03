@@ -1,0 +1,27 @@
+{
+    "name": "ninhnk/first-package",
+    "description": "This is my first-package",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Ninhnk\\FirstPackage\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ninhnk\\FirstPackage\\Providers\\RouteServiceProvider"
+            ]
+        }
+    },
+
+    "authors": [
+        {
+            "name": "ninhnk",
+            "email": "ninhnk@icitech.net"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
