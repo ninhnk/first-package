@@ -6,23 +6,23 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ asset('first-package/assets/style.css') }}">
 </head>
 <body>
 <section>
     <div class="container">
         <div id="scene">
             <div class="layer" data-depth-x="-0.5" data-depth-y="0.25">
-                <img src="images/moon.png" alt="moon">
+                <img src="{{ asset('first-package/assets/images/moon.png') }}" alt="moon">
             </div>
             <div class="layer" data-depth-x="0.15">
-                <img src="images/mountains02.png" alt="mountains02">
+                <img src="{{ asset('first-package/assets/images/mountains02.png') }}" alt="mountains02">
             </div>
             <div class="layer" data-depth-x="0.25">
-                <img src="images/mountains01.png" alt="mountains01">
+                <img src="{{ asset('first-package/assets/images/mountains01.png') }}" alt="mountains01">
             </div>
             <div class="layer" data-depth-x="-0.25">
-                <img src="images/road.png" alt="road">
+                <img src="{{ asset('first-package/assets/images/road.png') }}" alt="road">
             </div>
         </div>
     </div>

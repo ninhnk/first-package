@@ -23,7 +23,7 @@ class RouteServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'first-package');
 
         $this->publishes([
-            __DIR__ . '/../resources/assets' => public_path('first-package/css')
+            __DIR__ . '/../resources/assets' => public_path('first-package/assets')
         ]);
     }
 }
