@@ -21,5 +21,9 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'first-package');
+
+        $this->publishes([
+            __DIR__ . '/../resources/assets' => public_path('first-package/css')
+        ]);
     }
 }
