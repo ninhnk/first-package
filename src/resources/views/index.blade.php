@@ -5,35 +5,37 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Login</title>
-    <link rel="stylesheet" href="{{ mix('first-package/assets/style.css') }}">
+    <link rel="stylesheet" href="first-package/assets/style.css">
 </head>
 <body>
 <section>
     <div class="container">
         <div id="scene">
             <div class="layer" data-depth-x="-0.5" data-depth-y="0.25">
-                <img src="{{ mix('first-package/assets/images/moon.png') }}" alt="moon">
+                <img src="first-package/assets/images/moon.png" alt="moon">
             </div>
             <div class="layer" data-depth-x="0.15">
-                <img src="{{ mix('first-package/assets/images/mountains02.png') }}" alt="mountains02">
+                <img src="first-package/assets/images/mountains02.png" alt="mountains02">
             </div>
             <div class="layer" data-depth-x="0.25">
-                <img src="{{ mix('first-package/assets/images/mountains01.png') }}" alt="mountains01">
+                <img src="first-package/assets/images/mountains01.png" alt="mountains01">
             </div>
             <div class="layer" data-depth-x="-0.25">
-                <img src="{{ mix('first-package/assets/images/road.png') }}" alt="road">
+                <img src="first-package/assets/images/road.png" alt="road">
             </div>
         </div>
     </div>
 
-    <form class="login">
+    <form class="login" action="{{ route('submit') }}" method="POST">
+        @csrf
         <h2>Sign In</h2>
         <div class="inputBox">
-            <input type="text" placeholder="Username">
+            <input type="text" placeholder="Username" name="user_name" value="{{ old('user_name') }}">
         </div>
         <div class="inputBox">
-            <input type="password" placeholder="Password">
+            <input type="password" placeholder="Password" name="password">
         </div>
         <div class="inputBox">
             <input type="submit" value="Login" id="btn">

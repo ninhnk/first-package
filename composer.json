@@ -5,7 +5,8 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Ninhnk\\FirstPackage\\": "src/"
+            "Ninhnk\\FirstPackage\\": "src/",
+            "Ninhnk\\FirstPackage\\Database\\Seeders\\": "src/database/seeders"
         }
     },
     "extra": {

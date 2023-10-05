@@ -21,9 +21,13 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'first-package');
+        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+
 
         $this->publishes([
-            __DIR__ . '/../resources/assets' => public_path('first-package/assets')
+            __DIR__ . '/../resources/assets' => public_path('first-package/assets'),
+            __DIR__ . '/../config' => config_path('/'),
+//            __DIR__ . '/../database' => database_path('/'),
         ]);
     }
 }
