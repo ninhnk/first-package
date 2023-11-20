@@ -18,7 +18,7 @@ class SetupEnvironmentCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Setup environment by running migrate, storage:link, and db:seed commands';
+    protected $description = 'Setup environment by running migrate, storage:link, and various seed commands';
 
     /**
      * Execute the console command.
