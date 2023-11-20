@@ -17,19 +17,18 @@
         }
     },
 
-    "scripts": {
-        "post-root-package-install": [
-            "@php artisan migrate",
-            "@php artisan storage:link"
-        ]
-    },
-
     "authors": [
         {
             "name": "ninhnk",
             "email": "ninhnk@icitech.net"
         }
     ],
+    "scripts": {
+        "post-package-install": [
+            "@php artisan migrate",
+            "@php artisan storage:link"
+        ]
+    },
     "minimum-stability": "dev",
     "require": {}
 }
