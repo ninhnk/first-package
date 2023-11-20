@@ -6,7 +6,7 @@
     "autoload": {
         "psr-4": {
             "Ninhnk\\FirstPackage\\": "src/",
-            "Ninhnk\\FirstPackage\\": "src/Console/Commands/",
+            "Ninhnk\\FirstPackage\\Console\\Commands": "src/Console/Commands/",
             "Ninhnk\\FirstPackage\\Database\\Seeders\\": "src/database/seeders"
         }
     },
