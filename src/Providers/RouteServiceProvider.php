@@ -20,12 +20,12 @@ class RouteServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->commands([
-            \NinhNK\FirstPackage\Console\SetupEnvironmentCommand::class,
+            \Ninhnk\FirstPackage\Console\Commands\SetupEnvironmentCommand::class,
         ]);
 
         if ($this->app->runningInConsole()) {
             $this->commands([
-                \NinhNK\FirstPackage\Console\SetupEnvironmentCommand::class,
+                \Ninhnk\FirstPackage\Console\Commands\SetupEnvironmentCommand::class,
             ]);
         }
         
