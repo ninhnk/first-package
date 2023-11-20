@@ -20,8 +20,14 @@ class RouteServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->commands([
-           \Ninhnk\FirstPackage\Console\Commands\SetupEnvironmentCommand::class,
-       ]);
+            \NinhNK\FirstPackage\Console\SetupEnvironmentCommand::class,
+        ]);
+
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                \NinhNK\FirstPackage\Console\SetupEnvironmentCommand::class,
+            ]);
+        }
         
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'first-package');

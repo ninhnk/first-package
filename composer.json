@@ -6,7 +6,6 @@
     "autoload": {
         "psr-4": {
             "Ninhnk\\FirstPackage\\": "src/",
-            "Ninhnk\\FirstPackage\\Console\\Commands\\": "src/Console/Commands/",
             "Ninhnk\\FirstPackage\\Database\\Seeders\\": "src/database/seeders"
         }
     },
@@ -24,12 +23,6 @@
             "email": "ninhnk@icitech.net"
         }
     ],
-    "scripts": {
-        "post-package-install": [
-            "@php artisan migrate",
-            "@php artisan storage:link"
-        ]
-    },
     "minimum-stability": "dev",
     "require": {}
 }
