@@ -25,9 +25,10 @@ class SetupEnvironmentCommand extends Command
      */
     public function handle()
     {
+        dd('Command is being called');
         $this->call('migrate');
         $this->call('storage:link');
-        
+
         $this->seed('IBoot\\Core\\Database\\Seeders\\UserSeeder');
         $this->seed('IBoot\\Core\\Database\\Seeders\\PluginSeeder');
         $this->seed('IBoot\\Core\\Database\\Seeders\\MenuItemSeeder');
