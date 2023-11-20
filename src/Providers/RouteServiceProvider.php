@@ -3,6 +3,7 @@
 namespace Ninhnk\FirstPackage\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Ninhnk\FirstPackage\Console\Commands\SetupEnvironmentCommand;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -19,16 +20,11 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $this->commands([
-            \Ninhnk\FirstPackage\Console\Commands\SetupEnvironmentCommand::class,
-        ]);
-
-        if ($this->app->runningInConsole()) {
-            $this->commands([
-                \Ninhnk\FirstPackage\Console\Commands\SetupEnvironmentCommand::class,
-            ]);
+        if (! $this->app->runningInConsole()) {
+            return;
         }
-        
+        $this->registerCommands();
+
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'first-package');
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
@@ -37,6 +33,13 @@ class RouteServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/../resources/assets' => public_path('first-package/assets'),
 //            __DIR__ . '/../database' => database_path('/'),
+        ]);
+    }
+
+    protected function registerCommands(): void
+    {
+        $this->commands([
+            SetupEnvironmentCommand::class
         ]);
     }
 }
