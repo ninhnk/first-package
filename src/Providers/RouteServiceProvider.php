@@ -26,7 +26,6 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__ . '/../resources/assets' => public_path('first-package/assets'),
-            __DIR__ . '/../config' => config_path('/'),
 //            __DIR__ . '/../database' => database_path('/'),
         ]);
     }
