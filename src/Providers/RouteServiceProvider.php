@@ -22,6 +22,7 @@ class RouteServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'first-package');
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+        $this->commands(__DIR__ . '/../Console/Commands');
 
 
         $this->publishes([
